@@ -41,9 +41,9 @@ var FormMiddleware = require('express-mongodb-form-middleware');
 
 ## var fm = new FormMiddleware()
 
-Create a new FormController.
+Create a new `FormMiddleware` object.
 
-The returned object `fm` is a `FormController`. 
+The returned object `fm` is a `FormMiddleware`. 
 
 ## fm.viewPath(viewPath)
 
