@@ -1,0 +1,145 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.3.11
+3 info using node@v0.10.20
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/nick/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/tmp.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/tmp.tgz
+12 verbose folder .
+13 silly lockFile 1f1177db-tar tar://.
+14 verbose lock tar://. /Users/nick/.npm/1f1177db-tar.lock
+15 silly lockFile 7dfda517-82374-0-3791528500150889-tmp-tgz tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/tmp.tgz
+16 verbose lock tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/tmp.tgz /Users/nick/.npm/7dfda517-82374-0-3791528500150889-tmp-tgz.lock
+17 silly lockFile 1f1177db-tar tar://.
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 7dfda517-82374-0-3791528500150889-tmp-tgz tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/tmp.tgz
+20 silly lockFile 7dfda517-82374-0-3791528500150889-tmp-tgz tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/tmp.tgz
+21 verbose tar unpack /var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/tmp.tgz
+22 silly lockFile 82e67a8b-82374-0-3791528500150889-package tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/package
+23 verbose lock tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/package /Users/nick/.npm/82e67a8b-82374-0-3791528500150889-package.lock
+24 silly lockFile 7dfda517-82374-0-3791528500150889-tmp-tgz tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/tmp.tgz
+25 verbose lock tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/tmp.tgz /Users/nick/.npm/7dfda517-82374-0-3791528500150889-tmp-tgz.lock
+26 silly gunzTarPerm modes [ '755', '644' ]
+27 silly gunzTarPerm extractEntry package.json
+28 silly gunzTarPerm extractEntry README.md
+29 silly gunzTarPerm extractEntry LICENSE
+30 silly gunzTarPerm extractEntry index.js
+31 silly gunzTarPerm extractEntry .travis.yml
+32 silly gunzTarPerm extractEntry test/form-tests.js
+33 silly gunzTarPerm extractEntry test/views/form.jade
+34 silly lockFile 82e67a8b-82374-0-3791528500150889-package tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/package
+35 silly lockFile 82e67a8b-82374-0-3791528500150889-package tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/package
+36 silly lockFile 7dfda517-82374-0-3791528500150889-tmp-tgz tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/tmp.tgz
+37 silly lockFile 7dfda517-82374-0-3791528500150889-tmp-tgz tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/tmp.tgz
+38 verbose tar pack [ '/Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz',
+38 verbose tar pack   '/var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/package' ]
+39 verbose tarball /Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz
+40 verbose folder /var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/package
+41 silly lockFile 82e67a8b-82374-0-3791528500150889-package tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/package
+42 verbose lock tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/package /Users/nick/.npm/82e67a8b-82374-0-3791528500150889-package.lock
+43 silly lockFile 11bae1e0-orm-middleware-0-1-0-package-tgz tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz
+44 verbose lock tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz /Users/nick/.npm/11bae1e0-orm-middleware-0-1-0-package-tgz.lock
+45 silly lockFile 82e67a8b-82374-0-3791528500150889-package tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/package
+46 silly lockFile 82e67a8b-82374-0-3791528500150889-package tar:///var/folders/c4/x5mf860s05ngzxg_hnhw2xw40000gn/T/npm-10896-Rsdb7C5s/1381002682374-0.3791528500150889/package
+47 silly lockFile 11bae1e0-orm-middleware-0-1-0-package-tgz tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz
+48 silly lockFile 11bae1e0-orm-middleware-0-1-0-package-tgz tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz
+49 silly lockFile f531f774-db-form-middleware-0-1-0-package /Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package
+50 verbose lock /Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package /Users/nick/.npm/f531f774-db-form-middleware-0-1-0-package.lock
+51 silly lockFile f531f774-db-form-middleware-0-1-0-package /Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package
+52 silly lockFile f531f774-db-form-middleware-0-1-0-package /Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package
+53 verbose tar unpack /Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz
+54 silly lockFile 717d4534-db-form-middleware-0-1-0-package tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package
+55 verbose lock tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package /Users/nick/.npm/717d4534-db-form-middleware-0-1-0-package.lock
+56 silly lockFile 11bae1e0-orm-middleware-0-1-0-package-tgz tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz
+57 verbose lock tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz /Users/nick/.npm/11bae1e0-orm-middleware-0-1-0-package-tgz.lock
+58 silly gunzTarPerm modes [ '755', '644' ]
+59 silly gunzTarPerm extractEntry package.json
+60 silly gunzTarPerm extractEntry README.md
+61 silly gunzTarPerm extractEntry LICENSE
+62 silly gunzTarPerm extractEntry index.js
+63 silly gunzTarPerm extractEntry .travis.yml
+64 silly gunzTarPerm extractEntry test/form-tests.js
+65 silly gunzTarPerm extractEntry test/views/form.jade
+66 silly lockFile 717d4534-db-form-middleware-0-1-0-package tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package
+67 silly lockFile 717d4534-db-form-middleware-0-1-0-package tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package
+68 silly lockFile 11bae1e0-orm-middleware-0-1-0-package-tgz tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz
+69 silly lockFile 11bae1e0-orm-middleware-0-1-0-package-tgz tar:///Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz
+70 verbose chmod /Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz 644
+71 verbose chown /Users/nick/.npm/express-mongodb-form-middleware/0.1.0/package.tgz [ 501, 20 ]
+72 silly lockFile 3a52ce78- .
+73 silly lockFile 3a52ce78- .
+74 silly publish { name: 'express-mongodb-form-middleware',
+74 silly publish   version: '0.1.0',
+74 silly publish   description: 'Extremely opinionated resource middleware for express and mongoDB.',
+74 silly publish   main: 'index.js',
+74 silly publish   scripts: { test: 'mocha test/form-tests.js' },
+74 silly publish   author:
+74 silly publish    { name: 'Nick Poorman',
+74 silly publish      email: 'mail@nickpoorman.com',
+74 silly publish      url: 'http://nickpoorman.com' },
+74 silly publish   license: 'MIT',
+74 silly publish   repository:
+74 silly publish    { type: 'git',
+74 silly publish      url: 'git@github.com:nickpoorman/express-mongodb-form-middleware.git' },
+74 silly publish   homepage: 'https://github.com/nickpoorman/express-mongodb-form-middleware',
+74 silly publish   dependencies: { underscore: '~1.5.2' },
+74 silly publish   devDependencies:
+74 silly publish    { mocha: '~1.13.0',
+74 silly publish      supertest: '~0.8.0',
+74 silly publish      express: '~3.4.0',
+74 silly publish      'express-validator': '~0.8.0',
+74 silly publish      should: '~1.3.0',
+74 silly publish      jade: '~0.35.0' },
+74 silly publish   keywords: [ 'express', 'mongoDB', 'form', 'forms', 'controller', 'view' ],
+74 silly publish   readme: '#express-mongodb-form-middleware\r\n\r\nExtremely opinionated resource middleware for express and mongoDB.\r\n\r\nFor the specific use case where you want to provide view, validator, and persistence middleware for a resource.\r\n\r\nThis was created to save time when implementing a long multi-step form process.\r\n\r\n[![build status](https://secure.travis-ci.org/nickpoorman/express-mongodb-form-middleware.png)](https://travis-ci.org/nickpoorman/express-mongodb-form-middleware)\r\n\r\n# example\r\n\r\neasily provide resources for a form:\r\n\r\n``` js\r\nvar app = express();\r\n\r\nvar viewPath = \'form\';\r\nvar selectOptions = [\'Yes\', \'No\', \'Maybe\'];\r\n\r\nvar fc = new FormMiddleware()\r\n  .viewPath(viewPath)\r\n  .field({type: \'select\', name: \'testField\', options: selectOptions })\r\n  .validator({fn: \'notEmpty\', param: \'testField\', msg: \'Test field cannot be empty\'})\r\n  .validator({fn: \'isIn\', param: \'testField\', msg: \'Valid option required\', }, selectOptions)\r\n  .save(\'testField\', function(req, res) { return req.testObj })\r\n  .next(function(savedObj, req, res) {return res.redirect(\'/\' + savedObj.id); })\r\n\r\nvar m = fc.middleware();\r\n\r\napp.get(\'/\', m.render);\r\napp.post(\'/\', m.validateAndSave);\r\n\r\n```\r\n\r\n# methods\r\n\r\n``` js\r\nvar FormMiddleware = require(\'express-mongodb-form-middleware\');\r\n```\r\n\r\n## var fm = new FormMiddleware()\r\n\r\nCreate a new `FormMiddleware` object.\r\n\r\nThe returned object `fm` is a `FormMiddleware`. \r\n\r\n## fm.viewPath(viewPath)\r\n\r\nSet the `viewPath` to location of the view on disk.\r\n\r\n## fm.field(opts)\r\n\r\nAdd a field that can be passed to the view, validated, and/or saved.\r\n\r\n## fm.validator(opts)\r\n\r\nValidate a field. Uses [node-validator](https://github.com/chriso/node-validator) validators.\r\n\r\n## fm.save(field, fn)\r\n\r\nSave fields to the database.\r\n\r\n`field` is the field to save from the form into the database. Optionally, `field` can be an array of field names.\r\n\r\n`fn` is a function that returns the object on which `field` is to be saved. `fn` provides `req, res` as parameters.\r\n\r\n## fm.next(fn)\r\n\r\nSpecify a function callback to handle the final step after all the objects have been saved.\r\n\r\n`fn` provides `savedObj, req, res` as parameters, where `savedObj` is the object that was just saved. \r\n\r\nNote: `fm.next(fn)` will not be called if there was an error from the database. In the event of an error the middleware will call `next(err)` internally.\r\n\r\n# install\r\n\r\nWith [npm](https://npmjs.org) do:\r\n\r\n```\r\nnpm install express-mongodb-form-middleware\r\n```\r\n\r\n# license\r\n\r\nMIT',
+74 silly publish   readmeFilename: 'README.md',
+74 silly publish   bugs: { url: 'https://github.com/nickpoorman/express-mongodb-form-middleware/issues' },
+74 silly publish   _id: 'express-mongodb-form-middleware@0.1.0',
+74 silly publish   dist: { shasum: '7591a7a9aa6615e199e720b6e45b2bab8738249e' },
+74 silly publish   _from: '.' }
+75 verbose url raw express-mongodb-form-middleware
+76 verbose url resolving [ 'https://registry.npmjs.org/',
+76 verbose url resolving   './express-mongodb-form-middleware' ]
+77 verbose url resolved https://registry.npmjs.org/express-mongodb-form-middleware
+78 info trying registry request attempt 1 at 15:51:22
+79 http PUT https://registry.npmjs.org/express-mongodb-form-middleware
+80 http 409 https://registry.npmjs.org/express-mongodb-form-middleware
+81 verbose url raw express-mongodb-form-middleware
+82 verbose url resolving [ 'https://registry.npmjs.org/',
+82 verbose url resolving   './express-mongodb-form-middleware' ]
+83 verbose url resolved https://registry.npmjs.org/express-mongodb-form-middleware
+84 info trying registry request attempt 1 at 15:51:22
+85 http GET https://registry.npmjs.org/express-mongodb-form-middleware
+86 http 200 https://registry.npmjs.org/express-mongodb-form-middleware
+87 error publish fail Cannot publish over existing version.
+87 error publish fail Update the 'version' field in package.json and try again.
+87 error publish fail
+87 error publish fail If the previous version was published in error, see:
+87 error publish fail     npm help unpublish
+87 error publish fail
+87 error publish fail To automatically increment version numbers, see:
+87 error publish fail     npm help version
+88 error System Darwin 12.5.0
+89 error command "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+90 error cwd /Users/nick/Dropbox/newProjects/express-mongodb-form-middleware
+91 error node -v v0.10.20
+92 error npm -v 1.3.11
+93 error code EPUBLISHCONFLICT
+94 verbose exit [ 1, true ]
