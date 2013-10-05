@@ -1,6 +1,6 @@
 #express-mongoDB-form-middleware
 
-Extremely opinionated resource controller middleware for express and mongoDB.
+Extremely opinionated resource middleware for express and mongoDB.
 
 For the specific use case where you want to provide a view, validator, and persistence middleware for a resource.
 
