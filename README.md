@@ -1,4 +1,4 @@
-#express-mongoDB-form-middleware
+#express-mongodb-form-middleware
 
 Extremely opinionated resource middleware for express and mongoDB.
 
@@ -6,7 +6,7 @@ For the specific use case where you want to provide view, validator, and persist
 
 This was created to save time when implementing a long multi-step form process.
 
-[![build status](https://secure.travis-ci.org/nickpoorman/express-mongoDB-form-middleware.png)](https://travis-ci.org/nickpoorman/express-mongoDB-form-middleware)
+[![build status](https://secure.travis-ci.org/nickpoorman/express-mongodb-form-middleware.png)](https://travis-ci.org/nickpoorman/express-mongodb-form-middleware)
 
 # example
 
@@ -36,7 +36,7 @@ app.post('/', m.validateAndSave);
 # methods
 
 ``` js
-var FormMiddleware = require('express-mongoDB-form-middleware');
+var FormMiddleware = require('express-mongodb-form-middleware');
 ```
 
 ## var fm = new FormMiddleware()
@@ -78,7 +78,7 @@ Note: `fm.next(fn)` will not be called if there was an error from the database. 
 With [npm](https://npmjs.org) do:
 
 ```
-npm install express-mongoDB-form-middleware
+npm install express-mongodb-form-middleware
 ```
 
 # license
