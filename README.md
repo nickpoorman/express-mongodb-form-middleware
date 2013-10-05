@@ -13,23 +13,23 @@ This was created to save time when implementing a long multi-step form process.
 easily provide resources for a form:
 
 ``` js
-  var app = express();
+var app = express();
 
-  var viewPath = 'form';
-  var selectOptions = ['Yes', 'No', 'Maybe'];
+var viewPath = 'form';
+var selectOptions = ['Yes', 'No', 'Maybe'];
 
-  var fc = new FormMiddleware()
-    .viewPath(viewPath)
-    .field({type: 'select', name: 'testField', options: selectOptions })
-    .validator({fn: 'notEmpty', param: 'testField', msg: 'Test field cannot be empty'})
-    .validator({fn: 'isIn', param: 'testField', msg: 'Valid option required', }, selectOptions)
-    .save('testField', function(req, res) { return req.testObj })
-    .next(function(savedObj, req, res) {return res.redirect('/' + savedObj.id); })
+var fc = new FormMiddleware()
+  .viewPath(viewPath)
+  .field({type: 'select', name: 'testField', options: selectOptions })
+  .validator({fn: 'notEmpty', param: 'testField', msg: 'Test field cannot be empty'})
+  .validator({fn: 'isIn', param: 'testField', msg: 'Valid option required', }, selectOptions)
+  .save('testField', function(req, res) { return req.testObj })
+  .next(function(savedObj, req, res) {return res.redirect('/' + savedObj.id); })
 
-  var m = fc.middleware();
+var m = fc.middleware();
 
-  app.get('/', m.render);
-  app.post('/', m.validateAndSave);
+app.get('/', m.render);
+app.post('/', m.validateAndSave);
 
 ```
 
