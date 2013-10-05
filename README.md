@@ -14,11 +14,9 @@ easily provide resources for a form:
 
 ``` js
   var app = express();
-  app.set("views", __dirname + "/views");
-  app.set('view engine', 'jade');
-  app.set('view options', {
-    doctype: 'html'
-  });
+
+  var viewPath = 'form';
+  var selectOptions = ['Yes', 'No', 'Maybe'];
 
   var fc = new FormMiddleware()
     .viewPath(viewPath)
