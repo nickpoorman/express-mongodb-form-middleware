@@ -2,7 +2,7 @@
 
 Extremely opinionated resource middleware for express and mongoDB.
 
-For the specific use case where you want to provide a view, validator, and persistence middleware for a resource.
+For the specific use case where you want to provide view, validator, and persistence middleware for a resource.
 
 This was created to save time when implementing a long multi-step form process.
 
