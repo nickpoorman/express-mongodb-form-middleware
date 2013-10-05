@@ -1,0 +1,14 @@
+!!! 5
+html(lang="en")
+  head
+    title TestView
+  body
+    form(action='/')
+      for f in fields
+        if f.type === 'input'
+          input(name=f.name)
+        else if f.type === 'select'
+          select(name=f.name)
+            for v, k in f.options
+              option(value=k)= v
+      button(type="submit") Submit
