@@ -254,4 +254,47 @@ describe('input form-controller tests', function() {
         done();
       })
   });
+
+  it('return view options', function(done) {
+
+    var app = express();
+    app.set("views", __dirname + "/views");
+    app.set('view engine', 'jade');
+    app.set('view options', {
+      doctype: 'html'
+    });
+
+    app.use(express.bodyParser());
+    app.use(expressValidator());
+    app.use(express.methodOverride());
+
+    var fm = new FormMiddleware()
+      .viewPath(viewPath)
+      .field({
+        type: 'input',
+        name: 'testField',
+        options: selectOptions
+      })
+      .validator({
+        fn: 'notEmpty',
+        param: 'testField',
+        msg: 'Test field cannot be empty'
+      })
+      .update('testField', function(req, res) {
+        return req.testObj
+      })
+      .save(function(req, res) {
+        return req.testObj
+      }, function(req, res) {
+        this.testHookFunction = true;
+      })
+      .next(function(savedObj, req, res, next) {
+        return res.redirect('/' + savedObj.id);
+      });
+
+    fm.fields[0].getViewOpts().should.eql({ name: 'testField' })
+    fm.fields[0].getViewOpts().should.not.eql({ name: 'blabla' })
+    done();
+
+  });
 });
