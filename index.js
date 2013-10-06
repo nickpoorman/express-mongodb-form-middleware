@@ -99,7 +99,7 @@ FormMiddleware.prototype.save = function(objFn, hookFn) {
   if (!objFn || typeof objFn !== 'function') return null;
   if (hookFn && typeof hookFn !== 'function') return null;
 
-  this.saveHook = hookFn;  
+  this.saveHook = hookFn;
   this.saves.push(objFn);
   return this;
 }
@@ -222,14 +222,17 @@ function Field(opts) {
 
   self.name = opts.name;
 
+  // properties the view might use
+  self.locals = opts.locals || {};
+
   switch (opts.type) {
     case 'input':
       break;
     case 'select':
-      if (_.isArray(opts.options)) {
-        // turn it into a hash
+      if (_.isArray(opts.options)) {       
+        // turn it into a hash        
         opts.options = _.object(opts.options, opts.options);
-      }
+      } 
       self.options = opts.options;
       break;
     default:

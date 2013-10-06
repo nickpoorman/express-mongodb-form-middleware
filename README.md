@@ -53,6 +53,8 @@ Set the `viewPath` to location of the view on disk.
 
 Add a field that can be passed to the view, validated, and/or saved.
 
+`opts.locals` would be any properties the view might use.
+
 ## fm.validator(opts)
 
 Validate a field. Uses [node-validator](https://github.com/chriso/node-validator) validators.
