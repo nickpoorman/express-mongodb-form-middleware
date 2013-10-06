@@ -248,7 +248,6 @@ Field.prototype.getViewOpts = function(override){
   var opts = {};
 
   opts.name = this.name;
-  opts.type = this.type;
 
   for(v, k in this.locals){
     opts[k] = v;
