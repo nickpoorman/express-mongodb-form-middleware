@@ -221,6 +221,7 @@ function Field(opts) {
   if (opts.type === 'select' && !opts.options) return null;
 
   self.name = opts.name;
+  self.type = opts.type;
 
   // properties the view might use
   self.locals = opts.locals || {};
@@ -240,4 +241,18 @@ function Field(opts) {
   }
 
   return self;
+}
+
+Field.prototype.getViewOpts = function(override){
+  override = override || {};
+  var opts = {};
+
+  opts.name = this.name;
+  opts.type = this.type;
+
+  for(v, k in this.locals){
+    opts[k] = v;
+  }
+
+  return _.extend(opts, override);
 }

@@ -55,6 +55,10 @@ Add a field that can be passed to the view, validated, and/or saved.
 
 `opts.locals` would be any properties the view might use.
 
+### field.getViewOpts(override)
+
+The `Field` that get's created has a `getViewOpts` method that returns all the assigned locals along with `name` and `type` properties.
+
 ## fm.validator(opts)
 
 Validate a field. Uses [node-validator](https://github.com/chriso/node-validator) validators.
