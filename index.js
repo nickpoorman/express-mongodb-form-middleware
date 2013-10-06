@@ -99,7 +99,7 @@ FormMiddleware.prototype.save = function(objFn, hookFn) {
   if (!objFn || typeof objFn !== 'function') return null;
   if (hookFn && typeof hookFn !== 'function') return null;
 
-  this.saveHook = hookFn;
+  this.saveHook = hookFn;  
   this.saves.push(objFn);
   return this;
 }

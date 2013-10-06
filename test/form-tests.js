@@ -31,12 +31,30 @@ describe('select form-controller tests', function() {
 
     var fm = new FormMiddleware()
       .viewPath(viewPath)
-      .field({type: 'select', name: 'testField', options: selectOptions })
-      .validator({fn: 'notEmpty', param: 'testField', msg: 'Test field cannot be empty'})
-      .validator({fn: 'isIn', param: 'testField', msg: 'Valid option required', }, selectOptions)
-      .update('testField', function(req, res) {return req.testObj })
-      .save(function(req, res) {return req.testObj })
-      .next(function(savedObj, req, res, next) {return res.redirect('/' + savedObj.id); })
+      .field({
+        type: 'select',
+        name: 'testField',
+        options: selectOptions
+      })
+      .validator({
+        fn: 'notEmpty',
+        param: 'testField',
+        msg: 'Test field cannot be empty'
+      })
+      .validator({
+        fn: 'isIn',
+        param: 'testField',
+        msg: 'Valid option required',
+      }, selectOptions)
+      .update('testField', function(req, res) {
+        return req.testObj
+      })
+      .save(function(req, res) {
+        return req.testObj
+      })
+      .next(function(savedObj, req, res, next) {
+        return res.redirect('/' + savedObj.id);
+      })
 
     var m = fm.middleware();
 
@@ -186,6 +204,53 @@ describe('input form-controller tests', function() {
       .end(function(err, res) {
         res.statusCode.should.equal(302);
         res.headers.should.have.property('location', '/1');
+        done();
+      })
+  });
+
+  it('do save hook', function(done) {
+
+    var app = express();
+    app.set("views", __dirname + "/views");
+    app.set('view engine', 'jade');
+    app.set('view options', {
+      doctype: 'html'
+    });
+
+    app.use(express.bodyParser());
+    app.use(expressValidator());
+    app.use(express.methodOverride());
+
+    var fm = new FormMiddleware()
+      .viewPath(viewPath)
+      .field({
+        type: 'input',
+        name: 'testField',
+        options: selectOptions
+      })
+      .validator({
+        fn: 'notEmpty',
+        param: 'testField',
+        msg: 'Test field cannot be empty'
+      })
+      .update('testField', function(req, res) {
+        return req.testObj
+      })
+      .save(function(req, res) {
+        return req.testObj
+      }, function(req, res) {
+        this.testHookFunction = true;
+      })
+      .next(function(savedObj, req, res, next) {
+        return res.redirect('/' + savedObj.id);
+      });
+
+    app.post('/', stubMiddleware, fm.middleware().validateUpdateSave);
+
+    request(app)
+      .post('/')
+      .end(function(err, res) {
+        fm.testHookFunction.should.be.true;
         done();
       })
   });
