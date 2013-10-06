@@ -57,13 +57,21 @@ Add a field that can be passed to the view, validated, and/or saved.
 
 Validate a field. Uses [node-validator](https://github.com/chriso/node-validator) validators.
 
-## fm.save(field, fn)
+## fm.update(field, fn)
 
-Save fields to the database.
+Updates the property on the object with the given `field`.
 
-`field` is the field to save from the form into the database. Optionally, `field` can be an array of field names.
+`field` can be an array of field names.
 
-`fn` is a function that returns the object on which `field` is to be saved. `fn` provides `req, res` as parameters.
+`fn` is a function that returns the object on which `field` is to be updated. `fn` provides `req, res` as parameters.
+
+## fm.save(fn[, hookFn])
+
+Save (persists) an object to the database. This is where you would save the parent object [optionally, after updating an embedded object].
+
+`fn` is a function that returns the object to be saved. `fn` provides `req, res` as parameters.
+
+`hookFn` is an optional function to do anything that might need to be done before saving. ie. `push()`ing an embedded object into a parent object.
 
 ## fm.next(fn)
 
@@ -72,6 +80,30 @@ Specify a function callback to handle the final step after all the objects have 
 `fn` provides `savedObj, req, res` as parameters, where `savedObj` is the object that was just saved. 
 
 Note: `fm.next(fn)` will not be called if there was an error from the database. In the event of an error the middleware will call `next(err)` internally.
+
+## var middleware = fm.middleware()
+
+Creates the middleware based on the configured `FormMiddleware` object.
+
+## middleware.render(req, res, next)
+
+This middlware will render the provided view.
+
+## middleware.validate(req, res, next)
+
+This middlware will validate the configured params.
+
+## middleware.update(req, res, next)
+
+This middleware will update the configured params on the given objects.
+
+## middleware.save(req, res, next)
+
+This middleware will persist the given objects to the database.
+
+## middleware.validateUpdateSave()
+
+Returns an array of the `validate`, `update`, and `save` middleware.
 
 # install
 

@@ -34,7 +34,8 @@ describe('select form-controller tests', function() {
       .field({type: 'select', name: 'testField', options: selectOptions })
       .validator({fn: 'notEmpty', param: 'testField', msg: 'Test field cannot be empty'})
       .validator({fn: 'isIn', param: 'testField', msg: 'Valid option required', }, selectOptions)
-      .save('testField', function(req, res) { return req.testObj })
+      .update('testField', function(req, res) {return req.testObj })
+      .save(function(req, res) {return req.testObj })
       .next(function(savedObj, req, res, next) {return res.redirect('/' + savedObj.id); })
 
     var m = fm.middleware();
@@ -77,14 +78,17 @@ describe('select form-controller tests', function() {
         param: 'testField',
         msg: 'Valid option required',
       }, selectOptions)
-      .save('testField', function(req, res) {
+      .update('testField', function(req, res) {
+        return req.testObj
+      })
+      .save(function(req, res) {
         return req.testObj
       })
       .next(function(savedObj, req, res, next) {
         return res.redirect('/' + savedObj.id);
       }).middleware();
 
-    app.post('/', stubMiddleware, fm.validateAndSave);
+    app.post('/', stubMiddleware, fm.validateUpdateSave);
 
     request(app)
       .post('/')
@@ -120,7 +124,10 @@ describe('input form-controller tests', function() {
         param: 'testField',
         msg: 'Test field cannot be empty'
       })
-      .save('testField', function(req, res) {
+      .update('testField', function(req, res) {
+        return req.testObj
+      })
+      .save(function(req, res) {
         return req.testObj
       })
       .next(function(savedObj, req, res, next) {
@@ -162,14 +169,17 @@ describe('input form-controller tests', function() {
         param: 'testField',
         msg: 'Test field cannot be empty'
       })
-      .save('testField', function(req, res) {
+      .update('testField', function(req, res) {
+        return req.testObj
+      })
+      .save(function(req, res) {
         return req.testObj
       })
       .next(function(savedObj, req, res, next) {
         return res.redirect('/' + savedObj.id);
       }).middleware();
 
-    app.post('/', stubMiddleware, fm.validateAndSave);
+    app.post('/', stubMiddleware, fm.validateUpdateSave);
 
     request(app)
       .post('/')
