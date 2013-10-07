@@ -230,10 +230,10 @@ function Field(opts) {
     case 'input':
       break;
     case 'select':
-      if (_.isArray(opts.options)) {       
+      if (_.isArray(opts.options)) {
         // turn it into a hash        
         opts.options = _.object(opts.options, opts.options);
-      } 
+      }
       self.options = opts.options;
       break;
     default:
@@ -243,14 +243,18 @@ function Field(opts) {
   return self;
 }
 
-Field.prototype.getViewOpts = function(override){
+Field.prototype.getViewOpts = function(override) {
   override = override || {};
   var opts = {};
 
   opts.name = this.name;
 
-  for(v, k in this.locals){
-    opts[k] = v;
+  if (this.type === 'select') {
+    opts.options = this.options;
+  }
+
+  for (local in this.locals) {
+    opts[local] = this.locals[local];
   }
 
   return _.extend(opts, override);
