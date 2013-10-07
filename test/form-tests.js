@@ -116,6 +116,68 @@ describe('select form-controller tests', function() {
         done();
       })
   });
+
+  it('sets property on update', function(done) {
+
+    var testObj = {
+      foo: 'bar',
+      save: function(cb) { // stub out a save method
+        return cb(null, this);
+      }
+    };
+
+    var app = express();
+    app.set("views", __dirname + "/views");
+    app.set('view engine', 'jade');
+    app.set('view options', {
+      doctype: 'html'
+    });
+
+    app.use(express.bodyParser());
+    app.use(expressValidator());
+    app.use(express.methodOverride());
+
+    var fm = new FormMiddleware()
+      .viewPath(viewPath)
+      .field({
+        type: 'select',
+        name: 'testField',
+        options: selectOptions
+      })
+      .validator({
+        fn: 'notEmpty',
+        param: 'testField',
+        msg: 'Test field cannot be empty'
+      })
+      .validator({
+        fn: 'isIn',
+        param: 'testField',
+        msg: 'Valid option required',
+      }, selectOptions)
+      .update('testField', function(req, res) {
+        req.testObj = testObj;
+        return testObj;
+      })
+      .save(function(req, res) {
+        return req.testObj
+      })
+      .next(function(savedObj, req, res, next) {       
+        return res.json(savedObj);
+      }).middleware();
+
+    app.post('/', stubMiddleware, fm.validateUpdateSave);
+
+    request(app)
+      .post('/')
+      .type('form')
+      .send({ testField: 'No' })
+      .set('Accept', 'application/json')
+      .end(function(err, res) {
+        res.body.should.not.eql({ foo: 'bar' })
+        res.body.should.eql({ foo: 'bar',  testField: 'No'})
+        done();
+      })
+  });
 });
 
 
@@ -292,8 +354,12 @@ describe('input form-controller tests', function() {
         return res.redirect('/' + savedObj.id);
       });
 
-    fm.fields[0].getViewOpts().should.eql({ name: 'testField' })
-    fm.fields[0].getViewOpts().should.not.eql({ name: 'blabla' })
+    fm.fields[0].getViewOpts().should.eql({
+      name: 'testField'
+    })
+    fm.fields[0].getViewOpts().should.not.eql({
+      name: 'blabla'
+    })
     done();
 
   });
